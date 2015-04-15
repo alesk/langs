@@ -1,0 +1,25 @@
+{
+  "name": "modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+          "closure_compiler_jar" : "/Users/ales/bin/compiler.jar"
+  },
+
+  "scripts": {
+
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "require:amd": "node node_modules/requirejs/bin/r.js  -o baseUrl=amd name=client out=require-amd.js namespace=client",
+
+    "closure:common": "java -jar $npm_package_config_closure_compiler_jar --process_common_js_modules --common_js_entry_module common/client.js --js common-js/**.js --js_output_file closure-common.js",
+
+    "closure:amd": "java -jar $npm_package_config_closure_compiler_jar --transform_amd_modules --js amd/**.js --js_output_file closure-amd.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "requirejs": "^2.1.17"
+  }
+}

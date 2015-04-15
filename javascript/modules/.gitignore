@@ -1,4 +1,6 @@
 node_modules
-amd.out.js
-closure-compiles.js
+require-amd.js
+closure-common.js
+closure-amd.js
+*.swp
 
